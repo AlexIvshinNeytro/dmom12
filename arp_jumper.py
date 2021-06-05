@@ -4,11 +4,9 @@ import time
         
 
 def arp_daemon():
-    a = subprocess.run('arp -an')
+    a = subprocess.run('arp -an', shell=True)
     print(a)
 while True:
    time.sleep(5)
    arp_daemon()
-def exit():
-    exit(0)
        
