@@ -1,11 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 import subprocess
 import time
+        
 
-                   
 def arp_daemon():
-    print('hey')
-    time.sleep(10)
-   
+    a = subprocess.run('arp -an')
+    print(a)
 while True:
-    arp_daemon()
+   time.sleep(5)
+   arp_daemon()
+def exit():
+    exit(0)
+       
