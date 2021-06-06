@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/opt/arp_jumper.py
+ExecStart=/usr/bin/python3 /opt/arp_jumper.py
 TimeoutStartSec=0
 
 [Install]

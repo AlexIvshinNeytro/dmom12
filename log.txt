@@ -1,0 +1,6 @@
+? (192.168.1.1) в dc:9b:d7:0b:64:eb [ether] на wlp1s0
+? (192.168.1.1) в dc:9b:d7:0b:64:eb [ether] на wlp1s0
+? (192.168.1.1) в dc:9b:d7:0b:64:eb [ether] на wlp1s0
+? (192.168.1.1) в dc:9b:d7:0b:64:eb [ether] на wlp1s0
+? (192.168.1.1) в dc:9b:d7:0b:64:eb [ether] на wlp1s0
+? (192.168.1.1) в dc:9b:d7:0b:64:eb [ether] на wlp1s0

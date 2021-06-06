@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+import subprocess
+import time
+import socket
+from struct import pack
+from uuid import getnode as get_mac      
+
+def arp_daemon():
+    sock = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.htons(3))
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+    sock.bind(('wlp1s0', 0))
+
+    ARP_FRAME = [
+        pack('!H', 0x0001), # HRD
+        pack('!H', 0x0800), # PRO
+        pack('!B', 0x06), # HLN
+        pack('!B', 0x04), # PLN 
+        pack('!H', 0x0001), # OP
+       # pack('!6B', *local_mac), # SHA
+       # pack('!4B', *local_ip), # SPA
+        pack('!6B', *(0x00,)*6), # THA
+       # pack('!4B', *dest_ip), # TPA
+    ]
+    print(ARP_FRAME)
+    sock.sendto(b''.join(ARP_FRAME), ('255.255.255.255', 0))
+while True:
+   time.sleep(5)
+   arp_daemon()
+       
